@@ -1,0 +1,80 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+venv*/
+
+# Pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Coverage
+.coverage
+.coverage.*
+coverage.xml
+nosetests.xml
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local env files
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing / caches
+.tox/
+.nox/
+.cache/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Wheels
+*.whl
+
+# Project runtime data (ignore runtime WAL and generated SSTables)
+data/wal/
+data/sstables/
+
+# Vim swap files
+*.swp
+
+# End of file

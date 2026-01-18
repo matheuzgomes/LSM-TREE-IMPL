@@ -92,7 +92,7 @@ class LSMEngine:
 
     def size(self) -> int:
         """Get current memtable size"""
-        return self.memtable.actual_size_bytes
+        return self.memtable.size
     
     def should_flush(self) -> bool:
         """Check if memtable should be flushed"""

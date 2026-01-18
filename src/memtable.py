@@ -48,7 +48,7 @@ class Memtable:
         self.current_size_bytes = 0
 
     @property
-    def actual_size_bytes(self) -> int:
+    def size(self) -> int:
         """Get the actual size in bytes of the memtable"""
         return self.current_size_bytes
     
@@ -74,9 +74,9 @@ if __name__ == '__main__':
 
     # Test 2: Update
     print("Test 2: Update")
-    size_before = m.actual_size_bytes
+    size_before = m.size
     m.set('name', 'Bob')
-    size_after = m.actual_size_bytes
+    size_after = m.size
     print(f"  Updated 'name' to 'Bob'")
     print(f"  Size before: {size_before}, after: {size_after}")
     assert m.get('name') == 'Bob'
@@ -105,17 +105,17 @@ if __name__ == '__main__':
     m.clear()
     for i in range(100):
         m.set(f'key{i}', 'x' * 50)
-    print(f"  Size: {m.actual_size_bytes} bytes")
+    print(f"  Size: {m.size} bytes")
     print(f"  Should flush: {m.should_flush}")
     assert m.should_flush == True
     print("  ✓ Passed\n")
     
     # Test 6: Clear
     print("Test 6: Clear")
-    print(f"  Size before clear: {m.actual_size_bytes}")
+    print(f"  Size before clear: {m.size}")
     m.clear()
-    print(f"  Size after clear: {m.actual_size_bytes}")
-    assert m.actual_size_bytes == 0
+    print(f"  Size after clear: {m.size}")
+    assert m.size == 0
     assert m.get('key0') is None
     print("  ✓ Passed\n")
     
